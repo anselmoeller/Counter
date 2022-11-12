@@ -1,0 +1,235 @@
+:root{
+    --mainDarkColor:#000;
+    --mainLightColor:#FFF;
+    --secundaryTextColor:#C2C2C2;
+}
+body{
+    min-height: 100vh; /*to do not break with scroll*/
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+header h1 {
+    flex: 1;
+    text-align: center;
+    padding-left: 35px;
+    color: var(--secundaryTextColor);
+}
+.closeInfoBtn:hover{
+    cursor: pointer;
+}
+.iconHowToUse img{
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    position: absolute;
+    z-index: 3;
+}
+.iconHowToUse img:hover{
+    cursor:pointer;
+}
+.howToUse{
+    position:absolute;
+    z-index: 3;
+    text-align: center;
+    top: 15%;
+    padding: 7px 15px;
+    color: var(--mainLightColor);
+    background-color: #188876;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #000;
+}
+.closeInfoBtn{
+    background-color: red;
+    color: var(--mainLightColor);
+    border: 1px solid transparent;
+    border-radius: 7px;
+    padding: 3px 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    right: 10px;
+}
+
+/*------- hidden or display instrutions modal*/
+.displayStatus{
+    display: block;
+}
+.hiddenStatus{
+    display: hidden;
+}
+.visible{
+    display: hidden;
+}
+.onlyStyleBackground{
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+}
+
+/* Main styles*/
+main{
+    flex: 1; /* to get a free space of <body> Because it is  min-height: 100vh*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TitleAndNumberCountedArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TitleAndNumberCountedArea a{
+    text-decoration: none;  
+    color: var(--mainDarkColor); 
+}
+.TitleAndNumberCountedArea h2{
+    font-size: 50px;
+}
+.TitleAndNumberCountedArea span{
+    color: var(--mainDarkColor);
+    font-size: 50px;
+}
+.chooseModeCounterArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.chooseModeCounterArea button{
+    margin: 5px;
+}
+.mainBtsContersArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.mainBtsContersArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.mainBtsContersArea button{
+    margin-inline: 5px;
+}
+
+/*footer styles*/
+footer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer small a{
+    text-decoration: none;
+    color: var(--secundaryTextColor);
+}
+
+/*Buttons hovers*/
+
+.btnManualAutoMode:hover,
+.btnDecrease:hover,
+.btnReset:hover,
+.btnIncrease:hover
+{
+    color: darkblue;
+    cursor: pointer;
+}
+
+
+/* ------------ implementing style to <li> elements -------------*/
+#howthatWorks {
+    counter-reset: count 0;
+    text-align: left;    
+}
+
+#howthatWorks li {
+    counter-increment: count 1;
+    margin-bottom: 7px;
+}
+
+#howthatWorks li::marker {
+    content: counter(count, decimal) ' - ';
+}
+
+/* implementing responsivity*/
+
+@media (min-width:1060px){
+    .howToUse{
+        font-size: 20px;
+        margin-inline: 50px;
+    }
+    .howToUse h1{
+        font-size: 30px;
+    }
+    .font-sizeStandard{
+        font-size: 20px;
+    }
+    .closeInfoBtn{
+        font-size: 25px;
+    }
+}   
+
+@media (max-width:1059px){
+    .howToUse{
+        margin-inline: 40px;
+    }
+}   
+
+@media (max-width:700px){
+    .howToUse h1{
+        font-size: 20px;
+    }
+    .font-sizeStandard{
+        font-size: 14px;
+    }
+    .closeInfoBtn{
+        font-size: 11px;
+    }
+}   
+
+@media (max-width:600px){
+    .closeInfoBtn{
+        top: 15px;
+        right: calc(50% - 10px);
+    }
+    .howToUse h1{
+        font-size: 14px;
+        margin-top: 50px;
+    }
+    .font-sizeStandard{
+        font-size: 10px;
+    }
+}   
+
+@media (max-width:425px){
+    .howToUse h1{
+        font-size: 12px;
+    }
+    header h1 {
+        font-size: 25px;
+    }
+    .TitleAndNumberCountedArea h2{
+        font-size: 22px;
+    }
+}   
+
+ 
+

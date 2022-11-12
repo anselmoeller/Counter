@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anselmo De Paula Eller">
+    <link rel="icon" href="/public/image/round_pin_white_24dp.png" type="image/png">
+    <link rel="stylesheet" href="/public/styles.css">
+    <title>Counter - By Anselmo Eller</title>
+</head>
+<body>
+    <header>
+        <nav class="iconHowToUse">
+            <img onclick="displayStatusInfoHowToUse()" src="/public/image/twotone_help_outline_black_24dp.png" alt="iconHowToUseThisSite" title="How to Use This Page">
+        </nav>
+        <h1>Number Counter</h1>
+        <aside class="howToUse" hidden = 'true'>
+            <button class="closeInfoBtn" onclick="displayStatusInfoHowToUse()">X</button>
+            <h1>Welcome to my number counter page.</h1>
+            <p class="font-sizeStandard">That's how it works...</p>
+            <ol id="howthatWorks">
+                <li class="font-sizeStandard">Choose Counter mode between "Manual Mode" to make a manual count or "Automatic Mode" to count automatically.</li>
+                <li class="font-sizeStandard">Select the option "Increase" to increase the count or "Decrease" to decrease the count every 1 second.</li>
+                <li class="font-sizeStandard">Select the "Reset/Stop" option to reset the count in manual mode or pause the count in automatic mode.</li>
+            </ol>
+        </aside>
+        <div class="onlyStyleBackground" onclick="closeHowtoUse()" hidden></div>
+    </header>
+
+    <main>
+        <section class="TitleAndNumberCountedArea">
+            <h2>
+                <a href="index.html">
+                Counter
+                </a>
+            </h2>
+            <span id="showNumbers">0</span>
+        </section>
+        <section class="chooseModeCounterArea">
+            <span>Actual mode to count</span>
+            <button class="btnManualAutoMode" onclick="manualAutoMode()">Manual Mode</button>
+        </section>
+        <section class="mainBtsContersArea">
+            <button class="btnDecrease" onclick="execDecreseNum()">Decrease</button>
+            <button class="btnReset" onclick="execResetNum()" hidden>Reset/Stop</button>
+            <button class="btnIncrease" onclick="execSumNum()">Increase</button>
+        </section>
+    </main>
+
+    <footer>
+        <small>
+            <a href="index.html">Created by Anselmo de Paula Eller</a>
+        </small>
+    </footer>
+    <script src="/public/scripts.js"></script>
+</body>
+</html>
